@@ -1,0 +1,522 @@
+---
+// Navbar.astro
+const currentPath = Astro.url.pathname;
+
+// Функция для проверки активности ссылки
+function isActive(href: string): boolean {
+  if (href === '/' && currentPath === '/') return true;
+  if (href !== '/' && currentPath.startsWith(href)) return true;
+  return false;
+}
+---
+
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <div class="logo"><img src='/public/favicon.svg'></div>
+   
+    <ul class="nav-menu" id="nav-menu">
+      <li><a href="/" class={`nav-link ${isActive('/') ? 'active' : ''}`}>Главная</a></li>
+      <li><a href="/about" class={`nav-link ${isActive('/about') ? 'active' : ''}`}>О нас</a></li>
+    </ul>
+
+    <div class="mobile-controls">
+      <button data-scroll-to="form" class="btn-primary mobile-btn">Оставить заявку</button>
+      <button class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+   
+    <button data-scroll-to="form" class="btn-primary desktop-btn">Оставить заявку</button>
+  </div>
+</nav>
+
+<style>
+  .navbar {
+    min-height: 44px;
+    width: 100%;
+    margin-top: 40px;
+    position: relative;
+    z-index: 1000;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .navbar.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-top: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    animation: slideDown 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  @keyframes slideDown {
+    from {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .container {
+    max-width: 1180px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    transition: padding 0.3s ease;
+  }
+
+  .navbar.sticky .container {
+    padding: 10px 10px;
+  }
+
+  .logo img {
+    width: 64px;
+    font-weight: bold;
+    color: #ff8c42;
+    transition: all 0.3s ease;
+  }
+
+  .navbar.sticky .logo {
+    font-size: 24px;
+    transform: scale(0.95);
+  }
+
+  .nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s ease;
+  }
+
+  .nav-link {
+    color: #A6A6A6;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 8px 0;
+    position: relative;
+  }
+
+  .nav-link:hover,
+  .nav-link.active {
+    color: #333;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #ff8c42;
+    transition: width 0.3s ease;
+  }
+
+  .nav-link.active::after {
+    width: 100%;
+  }
+
+  .btn-primary {
+    background-color: #F5810B;
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 400px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-primary:hover {
+    background-color: #e6783a;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(245, 129, 11, 0.3);
+  }
+
+  .btn-primary:active {
+    transform: translateY(0);
+  }
+
+  .navbar.sticky .btn-primary {
+    padding: 12px 24px;
+    font-size: 15px;
+  }
+
+  /* Мобильные элементы управления */
+  .mobile-controls {
+    display: none;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .mobile-btn {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+
+  .desktop-btn {
+    display: block;
+  }
+
+  /* Гамбургер меню */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 24px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+  }
+
+  .hamburger span {
+    width: 24px;
+    height: 2px;
+    background: #333;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+  }
+
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+
+  /* Адаптивность для экранов до 1440px */
+  @media (max-width: 1440px) {
+    .container {
+      margin: 0 130px;
+      max-width: none;
+      width: calc(100% - 260px);
+    }
+  }
+
+  @media (max-width: 900px) {
+    .container {
+      margin: 0 40px;
+      width: calc(100% - 80px);
+    }
+   
+    .nav-menu {
+      gap: 24px;
+    }
+   
+    .logo {
+      font-size: 24px;
+    }
+
+    .navbar.sticky .logo {
+      font-size: 22px;
+    }
+  }
+
+  @media (max-width: 768px) {
+
+
+    .container {
+      margin: 0 20px;
+    }
+
+    .desktop-btn {
+      display: none;
+    }
+
+    .mobile-controls {
+      display: flex;
+    }
+
+    .nav-menu {
+      display: none; /* Скрываем по умолчанию */
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 280px;
+      height: 100vh;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding: 80px 30px 30px;
+      box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+      transform: translateX(100%); /* Изначально за пределами экрана */
+      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      gap: 0;
+      z-index: 999;
+    }
+
+    .nav-menu.active {
+      display: flex; /* Показываем только когда активно */
+      transform: translateX(0); /* Двигаем в видимую область */
+    }
+
+    .nav-menu li {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .nav-link {
+      font-size: 18px;
+      padding: 15px 20px;
+      display: block;
+      width: 100%;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-link::after {
+      display: none;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: #ff8c42;
+      background: rgba(255, 140, 66, 0.1);
+      border-radius: 8px;
+      border-bottom-color: transparent;
+    }
+
+    .logo {
+      font-size: 22px;
+    }
+
+    .navbar.sticky .logo {
+      font-size: 20px;
+    }
+
+    .navbar.sticky .mobile-btn {
+      padding: 8px 14px;
+      font-size: 13px;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .container {
+      padding: 0 15px;
+    }
+
+    .nav-menu {
+      width: 100vw;
+      transform: translateX(100%);
+      padding: 80px 0;
+    }
+
+    .nav-menu.active {
+      display: flex;
+      transform: translateX(0);
+    }
+
+    .logo {
+      font-size: 20px;
+    }
+
+    .navbar.sticky .logo {
+      font-size: 18px;
+    }
+
+    .mobile-btn {
+      padding: 8px 12px;
+      font-size: 13px;
+    }
+
+    .navbar.sticky .mobile-btn {
+      padding: 6px 10px;
+      font-size: 12px;
+    }
+
+    .mobile-controls {
+      gap: 8px;
+    }
+  }
+
+  /* Оверлей для мобильного меню */
+  .menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 998;
+  }
+
+  .menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Дополнительные улучшения анимации */
+  @media (prefers-reduced-motion: no-preference) {
+    .navbar {
+      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    
+    .navbar.sticky {
+      animation: slideDown 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .navbar,
+    .container,
+    .logo,
+    .nav-link,
+    .btn-primary,
+    .nav-menu,
+    .hamburger span {
+      transition: none;
+      animation: none;
+    }
+  }
+</style>
+
+<script>
+  // Получаем элементы
+  const navbar = document.getElementById('navbar');
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('nav-menu');
+  
+  // Создаем оверлей для мобильного меню
+  const overlay = document.createElement('div');
+  overlay.classList.add('menu-overlay');
+  document.body.appendChild(overlay);
+  
+  // Сохраняем изначальное положение навбара
+  let navbarOffsetTop = navbar.offsetTop;
+  
+  // Переменная для отслеживания состояния
+  let isSticky = false;
+  let isMobileMenuOpen = false;
+  
+  // Функция для обновления позиции при ресайзе
+  function updateNavbarOffset() {
+    if (!isSticky) {
+      navbarOffsetTop = navbar.offsetTop;
+    }
+  }
+  
+  // Функция обработки скролла с throttling для оптимизации
+  let ticking = false;
+  
+  function handleScroll() {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (scrollTop >= navbarOffsetTop && !isSticky) {
+          navbar.classList.add('sticky');
+          isSticky = true;
+          // Добавляем отступ к body чтобы контент не подпрыгивал
+          document.body.style.paddingTop = navbar.offsetHeight + 'px';
+        } else if (scrollTop < navbarOffsetTop && isSticky) {
+          navbar.classList.remove('sticky');
+          isSticky = false;
+          // Убираем отступ
+          document.body.style.paddingTop = '0px';
+        }
+        
+        ticking = false;
+      });
+      
+      ticking = true;
+    }
+  }
+
+  // Функция для открытия/закрытия мобильного меню
+  function toggleMobileMenu() {
+    isMobileMenuOpen = !isMobileMenuOpen;
+    
+    if (isMobileMenuOpen) {
+      hamburger.classList.add('active');
+      navMenu.classList.add('active');
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    } else {
+      hamburger.classList.remove('active');
+      navMenu.classList.remove('active');
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  }
+
+  // Функция для закрытия мобильного меню
+  function closeMobileMenu() {
+    if (isMobileMenuOpen) {
+      toggleMobileMenu();
+    }
+  }
+  
+  // Добавляем обработчики событий
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  window.addEventListener('resize', () => {
+    updateNavbarOffset();
+    // Закрываем мобильное меню при изменении размера экрана
+    if (window.innerWidth > 768) {
+      closeMobileMenu();
+    }
+  });
+  
+  // Обработчик клика по гамбургеру
+  hamburger.addEventListener('click', toggleMobileMenu);
+  
+  // Обработчик клика по оверлею
+  overlay.addEventListener('click', closeMobileMenu);
+  
+  // Закрытие меню при клике на ссылку
+  navMenu.addEventListener('click', (e) => {
+    if (e.target.classList.contains('nav-link')) {
+      closeMobileMenu();
+    }
+  });
+
+  // Закрытие меню при нажатии Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeMobileMenu();
+    }
+  });
+  
+  // Инициализация при загрузке страницы
+  window.addEventListener('load', () => {
+    updateNavbarOffset();
+    handleScroll();
+  });
+</script>

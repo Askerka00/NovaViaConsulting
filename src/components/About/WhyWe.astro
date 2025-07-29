@@ -1,0 +1,205 @@
+---
+// Why choose us section with certificate
+---
+    <style>
+        .why-choose-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 120px 20px 0;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 60px;
+        }
+
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .text-content {
+            max-width: 500px;
+        }
+
+        .features-list {
+            list-style: none;
+            space-y: 24px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 24px;
+            padding: 20px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .feature-item:last-child {
+            border-bottom: none;
+        }
+
+        .feature-icon {
+            width: 24px;
+            height: 24px;
+            background: #22c55e;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .feature-text {
+            flex: 1;
+        }
+
+        .feature-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+            margin-top: 4px;
+        }
+
+        .feature-description {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .certificate-container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .certificate-container:hover {
+            transform: translateY(-5px);
+        }
+
+        .certificate-header {
+            background: #f8f9fa;
+            padding: 20px;
+            border-bottom: 1px solid #e9ecef;
+            text-align: center;
+        }
+
+        .certificate-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #495057;
+            margin-bottom: 8px;
+        }
+
+        .certificate-subtitle {
+            font-size: 0.8rem;
+            color: #6c757d;
+        }
+
+        .certificate-body {
+            padding: 24px;
+        }
+
+        .cert-row {
+            display: flex;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #f8f9fa;
+        }
+
+        .cert-row:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .cert-label {
+            font-size: 0.8rem;
+            color: #6c757d;
+            font-weight: 500;
+            min-width: 140px;
+            margin-right: 16px;
+        }
+
+        .cert-value {
+            font-size: 0.85rem;
+            color: #212529;
+            font-weight: 500;
+            flex: 1;
+        }
+
+        .status-active {
+            color: #22c55e;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .content-wrapper {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+            
+            .section-title {
+                font-size: 24px;
+                margin-bottom: 40px;
+            }
+            
+            .why-choose-section {
+                padding: 120px 20px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section data-aos="fade-up" class="why-choose-section">
+        <h2 class="section-title">Почему выбирают нас?</h2>
+        
+        <div class="content-wrapper">
+            <div class="text-content">
+                <ul class="features-list">
+                    <li class="feature-item">
+                        <div class="feature-icon">✓</div>
+                        <div class="feature-text">
+                            <h3 class="feature-title">Официальная регистрация</h3>
+                            <p class="feature-description">Мы официально зарегистрированы в Министерстве Юстиции КР с полным пакетом документов</p>
+                        </div>
+                    </li>
+                    
+                    <li class="feature-item">
+                        <div class="feature-icon">✓</div>
+                        <div class="feature-text">
+                            <h3 class="feature-title">Надежность и доверие</h3>
+                            <p class="feature-description">Наша компания имеет все необходимые лицензии и сертификаты для ведения деятельности</p>
+                        </div>
+                    </li>
+                    
+                    <li class="feature-item">
+                        <div class="feature-icon">✓</div>
+                        <div class="feature-text">
+                            <h3 class="feature-title">Прозрачность работы</h3>
+                            <p class="feature-description">Вся информация о нашей компании находится в открытом доступе и подтверждена государственными органами</p>
+                        </div>
+                    </li>
+                    
+                    <li class="feature-item">
+                        <div class="feature-icon">✓</div>
+                        <div class="feature-text">
+                            <h3 class="feature-title">Качество услуг</h3>
+                            <p class="feature-description">Многолетний опыт работы и высокие стандарты обслуживания клиентов</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>

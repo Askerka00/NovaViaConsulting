@@ -1,0 +1,619 @@
+---
+// SubmitApplication.astro
+---
+
+<section id='form' data-aos="fade-up" class="submit-application">
+  <div class="container">
+    <div class="content-wrapper">
+      <div class='application-info'>
+        <div class='application-title'>
+          <h2 class="title">Подать заявку</h2>
+          <p class="subtitle">We are committed to processing the information in order to contact you and talk about your project.</p>
+        </div>
+        <div class="contact-section">
+        <div class="contact-item">
+          <div class="contact-icon email-icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M3.33 5L10 10L16.67 5M3.33 5H16.67V15H3.33V5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <span>example@novaconsult.com</span>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon location-icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M10 11C11.1046 11 12 10.1046 12 9C12 7.89543 11.1046 7 10 7C8.89543 7 8 7.89543 8 9C8 10.1046 8.89543 11 10 11Z" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M10 2C13.314 2 16 4.686 16 8C16 12 10 18 10 18C10 18 4 12 4 8C4 4.686 6.686 2 10 2Z" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <div class="contact-text">
+            <div>4074 Ebert Summit Suite 375</div>
+            <div>Lake Leonardchester</div>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon phone-icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M18 14.5V17C18 17.5304 17.7893 18.0391 17.4142 18.4142C17.0391 18.7893 16.5304 19 16 19C7.716 19 1 12.284 1 4C1 3.46957 1.21071 2.96086 1.58579 2.58579C1.96086 2.21071 2.46957 2 3 2H5.5C5.89 2 6.229 2.263 6.292 2.645L7.057 6.61C7.13 7.04 6.99 7.487 6.676 7.8L5.343 9.133C6.45 11.43 8.57 13.55 10.867 14.657L12.2 13.324C12.513 13.01 12.96 12.87 13.39 12.943L17.355 13.708C17.737 13.771 18 14.11 18 14.5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <span>+996 702 134 518</span>
+        </div>
+      </div>
+      </div>
+      <div class="form-section">
+        <form class="application-form">
+          <div class="form-row">
+            <div class="form-group">
+              <input type="text" placeholder="Имя" class="form-input" />
+            </div>
+            <div class="form-group">
+              <select class="form-select">
+                <option>Уровень английского</option>
+                <option>Beginner</option>
+                <option>Elementary</option>
+                <option>Intermediate</option>
+                <option>Upper-Intermediate</option>
+                <option>Advanced</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <div class="date-input-wrapper">
+                <input type="date" class="form-input date-input" />              </div>
+            </div>
+            <div class="form-group">
+              <select class="form-select">
+                <option>Какого качества универ вы хотите?</option>
+                <option>Высокого качества</option>
+                <option>Среднего качества</option>
+                <option>Доступного качества</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <select class="form-select">
+                <option>Какая программа вас интересует?</option>
+                <option>Бакалавриат</option>
+                <option>Магистратура</option>
+                <option>PhD</option>
+                <option>Краткосрочные программы</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <input type="text" placeholder="Ваш WhatsApp с кодом страны (+7923)" class="form-input" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <select class="form-select">
+                <option>Ваш максимальный бюджет на этот год?</option>
+                <option>До $10,000</option>
+                <option>$10,000 - $25,000</option>
+                <option>$25,000 - $50,000</option>
+                <option>Свыше $50,000</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <textarea placeholder="Ваш вопрос" class="form-textarea"></textarea>
+            </div>
+          </div>
+
+          <button type="submit" class="submit-btn">Отправить</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .submit-application {
+    background: #F8F9FA;
+    min-height: 990px;
+    display: flex;
+    align-items: center;
+    margin-top: 130px;
+  }
+
+  .container {
+    max-width: 976px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+  }
+
+  .application-info {
+    display: flex;
+  }
+
+  .application-title{
+    width: 466px;
+    margin-right: 48px;
+  }
+
+  .form-section {
+    margin-top: 66px;
+    border-radius: 12px;
+  }
+
+  .title {
+    font-size: 54px;
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 16px 0;
+  }
+
+  .subtitle {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0 0 40px 0;
+  }
+
+  .application-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 42px;
+  }
+
+  .form-row:last-of-type {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .form-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-input,
+  .form-select,
+  .form-textarea {
+    font-family: inherit;
+    box-sizing: border-box;
+    width: 466px;
+    padding: 24.5px 20px;
+    border: 2px solid #E5E7EB;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #333;
+    background: white;
+    transition: all 0.3s ease;
+  }
+
+  .form-input:focus,
+  .form-select:focus,
+  .form-textarea:focus {
+    outline: none;
+    border-color: #FF7A00;
+    box-shadow: 0 0 0 3px rgba(255, 122, 0, 0.1);
+  }
+
+  .form-input::placeholder,
+  .form-textarea::placeholder {
+    color: #999FAE;
+  }
+
+  .form-select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%239CA3AF' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 48px;
+  }
+
+  .form-textarea {
+    min-height: 120px;
+    resize: vertical;
+    font-family: inherit;
+  }
+
+  /* Date input wrapper styles */
+  .date-input-wrapper {
+    position: relative;
+    width: 466px;
+  }
+
+  .date-input {
+    width: 100% !important;
+    color-scheme: light;
+    position: relative;
+    z-index: 2;
+  }
+
+  .date-input::-webkit-calendar-picker-indicator {
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.6667 2.66667H12V2C12 1.63181 11.7015 1.33333 11.3333 1.33333C10.9651 1.33333 10.6667 1.63181 10.6667 2V2.66667H5.33333V2C5.33333 1.63181 5.03486 1.33333 4.66667 1.33333C4.29848 1.33333 4 1.63181 4 2V2.66667H3.33333C2.59695 2.66667 2 3.26362 2 4V12.6667C2 13.403 2.59695 14 3.33333 14H12.6667C13.403 14 14 13.403 14 12.6667V4C14 3.26362 13.403 2.66667 12.6667 2.66667ZM12.6667 12.6667H3.33333V6H12.6667V12.6667ZM12.6667 4.66667H3.33333V4H12.6667V4.66667Z' fill='%239CA3AF'/%3E%3C/svg%3E");
+    background-size: 16px;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    opacity: 1;
+  }
+
+  .date-placeholder {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999FAE;
+    font-size: 16px;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    z-index: 1;
+  }
+
+  .date-input:focus + .date-placeholder,
+  .date-input:valid + .date-placeholder,
+  .date-input:not(:placeholder-shown) + .date-placeholder {
+    opacity: 0;
+    transform: translateY(-50%) translateX(-10px);
+  }
+
+  /* Webkit date input specific styles */
+  .date-input::-webkit-datetime-edit-text {
+    color: transparent;
+  }
+
+  .date-input::-webkit-datetime-edit-month-field,
+  .date-input::-webkit-datetime-edit-day-field,
+  .date-input::-webkit-datetime-edit-year-field {
+    color: #333;
+  }
+
+  .date-input::-webkit-datetime-edit {
+    color: #333;
+  }
+
+  /* Firefox date input */
+  .date-input::-moz-placeholder {
+    opacity: 0;
+  }
+
+  .submit-btn {
+    background: #FF7A00;
+    color: white;
+    border: none;
+    padding: 20px 48px;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+    margin-top: 24px;
+  }
+
+  .submit-btn:hover {
+    background: #E66A00;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 122, 0, 0.3);
+  }
+
+  .contact-section {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding-top: 20px;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .contact-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .email-icon {
+    background: rgba(255, 122, 0, 0.1);
+    color: #FF7A00;
+  }
+
+  .location-icon {
+    background: rgba(255, 122, 0, 0.1);
+    color: #FF7A00;
+  }
+
+  .phone-icon {
+    background: rgba(255, 122, 0, 0.1);
+    color: #FF7A00;
+  }
+
+  .contact-text {
+    color: #333;
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  .contact-item > span {
+    color: #333;
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  /* Tablet styles */
+  @media (max-width: 1024px) {
+    .submit-application {
+      margin-top: 80px;
+      min-height: auto;
+      padding: 60px 0;
+    }
+
+    .container {
+      max-width: 768px;
+    }
+
+    .application-title {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 40px;
+    }
+
+    .application-info {
+      flex-direction: column;
+    }
+
+    .form-section {
+      margin-top: 40px;
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
+      width: 100%;
+      max-width: 350px;
+    }
+
+    .date-input-wrapper {
+      width: 100%;
+      max-width: 350px;
+    }
+
+    .form-row {
+      justify-items: center;
+      gap: 24px;
+    }
+
+    .submit-btn {
+      align-self: center;
+    }
+
+    .title {
+      font-size: 42px;
+      text-align: center;
+    }
+
+    .subtitle {
+      text-align: center;
+    }
+
+    .contact-section {
+      align-items: center;
+    }
+  }
+
+  /* Mobile styles */
+  @media (max-width: 768px) {
+    .submit-application {
+      margin-top: 60px;
+      padding: 40px 0;
+    }
+
+    .container {
+      padding: 0 16px;
+    }
+
+    .title {
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      margin-bottom: 32px;
+    }
+
+    .form-section {
+      margin-top: 32px;
+    }
+
+    .application-form {
+      gap: 16px;
+    }
+
+    .form-row {
+      grid-template-columns: 1fr !important;
+      gap: 16px;
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
+      width: 100%;
+      max-width: none;
+      padding: 16px;
+      font-size: 16px; /* Важно для iOS чтобы не зумировался */
+    }
+
+    .date-input-wrapper {
+      width: 100%;
+      max-width: none;
+    }
+
+    .date-placeholder {
+      left: 16px;
+    }
+
+    .form-textarea {
+      min-height: 100px;
+    }
+
+    .submit-btn {
+      width: 100%;
+      margin-top: 16px;
+      padding: 16px 24px;
+    }
+
+    .contact-section {
+      gap: 24px;
+      padding-top: 16px;
+    }
+
+    .contact-item {
+      width: 100%;
+      justify-content: flex-start;
+    }
+
+    .contact-icon {
+      width: 36px;
+      height: 36px;
+    }
+
+    .contact-text,
+    .contact-item > span {
+      font-size: 14px;
+    }
+  }
+
+  /* Small mobile styles */
+  @media (max-width: 480px) {
+    .submit-application {
+      margin-top: 40px;
+      padding: 32px 0;
+    }
+
+    .container {
+      padding: 0 12px;
+    }
+
+    .title {
+      font-size: 28px;
+    }
+
+    .subtitle {
+      font-size: 13px;
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
+      padding: 14px 12px;
+      font-size: 16px;
+    }
+
+    .date-placeholder {
+      left: 12px;
+    }
+
+    .form-select {
+      background-position: right 12px center;
+      padding-right: 36px;
+    }
+
+    .submit-btn {
+      padding: 14px 20px;
+      font-size: 15px;
+    }
+
+    .contact-section {
+      gap: 20px;
+    }
+
+    .contact-icon {
+      width: 32px;
+      height: 32px;
+    }
+
+    .contact-icon svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .contact-text,
+    .contact-item > span {
+      font-size: 13px;
+    }
+  }
+
+  /* Very small screens */
+  @media (max-width: 360px) {
+    .container {
+      padding: 0 8px;
+    }
+
+    .title {
+      font-size: 24px;
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
+      padding: 12px 10px;
+    }
+
+    .date-placeholder {
+      left: 10px;
+    }
+  }
+</style>
+
+<script>
+  // Hide placeholder when date input has value
+  document.addEventListener('DOMContentLoaded', function() {
+    const dateInputs = document.querySelectorAll('.date-input');
+    
+    dateInputs.forEach(input => {
+      const placeholder = input.nextElementSibling;
+      
+      // Check if input has value on load
+      if (input.value) {
+        placeholder.style.opacity = '0';
+      }
+      
+      // Hide placeholder when user interacts with input
+      input.addEventListener('change', function() {
+        if (this.value) {
+          placeholder.style.opacity = '0';
+        } else {
+          placeholder.style.opacity = '1';
+        }
+      });
+      
+      input.addEventListener('focus', function() {
+        placeholder.style.opacity = '0';
+      });
+      
+      input.addEventListener('blur', function() {
+        if (!this.value) {
+          placeholder.style.opacity = '1';
+        }
+      });
+    });
+  });
+</script>

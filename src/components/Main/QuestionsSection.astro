@@ -1,0 +1,395 @@
+---
+// QuestionsSection.astro
+---
+<section data-aos="fade-up" class="questions-section">
+ <div class='questions-section-wrapper'>
+  <div class="content">
+    <h2 class="title">Есть вопросы?</h2>
+    <p class="description">
+      Получите бесплатную консультацию и получите<br>
+      ответы на все ваши вопросы от экспертов.
+    </p>
+    <button data-scroll-to="form" class="consultation-button">
+      Получить консультацию <img src='/src/assets/icons/ArrowRigth.svg'>
+    </button>
+  </div>
+ 
+  <div class="image-container">
+    <img src="/src/assets/images/ModernUniversity.png" alt="Modern building architecture" class="building-image" />
+  </div>
+ </div>
+</section>
+
+<style>
+  .questions-section {
+    width: 100%;
+    height: 401px;
+    background: #F5810B;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 32px 40px 32px 32px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    margin: 160px auto 0 auto;
+  }
+  .questions-section-wrapper {
+    display: flex;
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+ 
+  .content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .title {
+    font-size: 40px;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+    line-height: 1.2;
+  }
+  .description {
+    font-size: 18px;
+    color: white;
+    line-height: 1.4;
+    opacity: 0.95;
+    margin: 21px 0 32px 0;
+  }
+  .consultation-button {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background-color: white;
+    color: #F5810B;
+    border: none;
+    padding: 15px 18px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    align-self: flex-start;
+    font-family: inherit;
+  }
+  .consultation-button:hover {
+    background-color: #f8f9fa;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+ 
+  .consultation-button img {
+    margin-top: 1.5px;
+    width: 12px;
+  }
+  .image-container {
+    width: 500px;
+    margin-left: 24px;
+    flex-shrink: 0;
+  }
+  .building-image {
+    width: 400px;
+    height: 250px;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Адаптивные стили */
+  @media (max-width: 1440px) {
+    .questions-section {
+      margin: 140px 0 0 0;
+    }
+    
+    .image-container {
+      width: 480px;
+    }
+    
+    .building-image {
+      width: 380px;
+      height: 238px;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .questions-section {
+      margin: 120px 0 0 0;
+      padding: 28px 32px;
+      height: 380px;
+    }
+    
+    .title {
+      font-size: 38px;
+    }
+    
+    .image-container {
+      width: 450px;
+      margin-left: 20px;
+    }
+    
+    .building-image {
+      width: 350px;
+      height: 220px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .questions-section {
+      margin: 100px 0 0 0;
+      padding: 24px 28px;
+      height: 360px;
+    }
+    
+    .title {
+      font-size: 36px;
+    }
+    
+    .description {
+      font-size: 17px;
+      margin: 18px 0 28px 0;
+    }
+    
+    .image-container {
+      width: 400px;
+      margin-left: 16px;
+    }
+    
+    .building-image {
+      width: 320px;
+      height: 200px;
+    }
+  }
+
+  @media (max-width: 992px) {
+    .questions-section {
+      height: auto;
+      min-height: 350px;
+    }
+    
+    .image-container {
+      width: 380px;
+    }
+    
+    .building-image {
+      width: 300px;
+      height: 188px;
+    }
+  }
+
+  @media (max-width: 868px) {
+    .questions-section {
+      flex-direction: column;
+      height: auto;
+      padding: 32px 24px;
+      text-align: center;
+      margin: 80px 0 0 0;
+    }
+    
+    .questions-section-wrapper {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .content {
+      align-items: center;
+    }
+    
+    .title {
+      font-size: 34px;
+    }
+    
+    .description {
+      font-size: 16px;
+      margin: 16px 0 24px 0;
+    }
+    
+    .description br {
+      display: none;
+    }
+    
+    .consultation-button {
+      align-self: center;
+    }
+    
+    .image-container {
+      width: 100%;
+      margin-left: 0;
+      margin-top: 24px;
+      display: flex;
+      justify-content: center;
+    }
+    
+    .building-image {
+      width: 280px;
+      height: 175px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .questions-section {
+      padding: 28px 20px;
+    }
+    
+    .title {
+      font-size: 32px;
+    }
+    
+    .building-image {
+      width: 250px;
+      height: 156px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .questions-section {
+      margin: 70px 0 0 0;
+      padding: 24px 18px;
+    }
+    
+    .title {
+      font-size: 30px;
+    }
+    
+    .description {
+      font-size: 15px;
+      margin: 14px 0 22px 0;
+    }
+    
+    .consultation-button {
+      padding: 13px 16px;
+      font-size: 15px;
+    }
+    
+    .building-image {
+      width: 220px;
+      height: 138px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .questions-section {
+      margin: 60px 0 0 0;
+      padding: 24px;
+    }
+   
+    .title {
+      font-size: 28px;
+    }
+    
+    .description {
+      margin: 14px 0 20px 0;
+    }
+    
+    .image-container {
+      margin-top: 20px;
+    }
+   
+    .building-image {
+      width: 200px;
+      height: 125px;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .questions-section {
+      padding: 22px 16px;
+      margin: 55px 0;
+    }
+    
+    .title {
+      font-size: 26px;
+    }
+    
+    .description {
+      font-size: 14px;
+      margin: 12px 0 18px 0;
+    }
+    
+    .consultation-button {
+      padding: 11px 14px;
+      font-size: 14px;
+    }
+    
+    .building-image {
+      width: 180px;
+      height: 113px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .questions-section {
+      padding: 20px 16px;
+      margin: 50px 0;
+      border-radius: 6px;
+    }
+    
+    .consultation-button img {
+      width: 10px;
+    }
+    
+    .building-image {
+      width: 200px;
+      height: 120px;
+    }
+  }
+
+  @media (max-width: 380px) {
+    .questions-section {
+      padding: 18px 12px;
+      margin: 45px 6px 0 6px;
+    }
+    
+    .title {
+      font-size: 24px;
+    }
+    
+    .description {
+      font-size: 13px;
+      margin: 10px 0 16px 0;
+    }
+    
+    .consultation-button {
+      padding: 10px 12px;
+      font-size: 13px;
+      gap: 2px;
+    }
+    
+    .consultation-button img {
+      width: 9px;
+    }
+    
+    .building-image {
+      width: 140px;
+      height: 88px;
+    }
+  }
+
+  @media (max-width: 320px) {
+    .questions-section {
+      padding: 16px 10px;
+      margin: 40px 4px 0 4px;
+    }
+    
+    .title {
+      font-size: 22px;
+    }
+    
+    .description {
+      font-size: 12px;
+      margin: 8px 0 14px 0;
+    }
+    
+    .consultation-button {
+      padding: 9px 10px;
+      font-size: 12px;
+    }
+    
+    .building-image {
+      width: 120px;
+      height: 75px;
+    }
+  }
+</style>

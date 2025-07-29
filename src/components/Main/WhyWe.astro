@@ -1,0 +1,272 @@
+---
+// WhyNovaConsulting.astro
+---
+
+<section data-aos="fade-up" class="why-nova-consulting">
+  <h2 class="main-title">Почему Nova Via Consulting?</h2>
+  <hr class='decor-line'>
+  <div class="benefits-grid">
+    <!-- Row 1 -->
+    <div class="benefit-card">
+      <div class="icon-container orange">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 3v5h5"/>
+          <path d="M21 21v-5h-5"/>
+          <path d="M3 8h18"/>
+          <path d="M3 16h18"/>
+        </svg>
+      </div>
+      <h3 class="benefit-title">Гарантированный результат</h3>
+      <p class="benefit-description">Мы предоставляем гарантию на наши услуги. Если студент не поступает в выбранный ВУЗ — полный возврат средств, без исключений.</p>
+    </div>
+
+    <div class="benefit-card">
+      <div class="icon-container orange">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M6 2h12a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/>
+          <path d="M12 6v6l4 2"/>
+        </svg>
+      </div>
+      <h3 class="benefit-title">Индивидуальный подход</h3>
+      <p class="benefit-description">Каждому студенту — персональную стратегию. Учитываем интересы, способности и возможности студента для достижения наилучшего результата.</p>
+    </div>
+
+    <div class="benefit-card">
+      <div class="icon-container orange">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+          <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+        </svg>
+      </div>
+      <h3 class="benefit-title">Максимум финансовой выгоды</h3>
+      <p class="benefit-description">Поиск оптимальных способов финансирования: гранты и стипендии на обучение.</p>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="benefit-card">
+      <div class="icon-container orange">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+          <circle cx="8.5" cy="7" r="4"/>
+          <path d="M20 8v6M23 11h-6"/>
+        </svg>
+      </div>
+      <h3 class="benefit-title">Полное сопровождение</h3>
+      <p class="benefit-description">Сопровождаем студента на каждом этапе поступления: от выбора университета до получения визы — мы на связи.</p>
+    </div>
+
+    <div class="benefit-card">
+      <div class="icon-container orange">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M20 6L9 17l-5-5"/>
+        </svg>
+      </div>
+      <h3 class="benefit-title">Прозрачность и честность</h3>
+      <p class="benefit-description">Никаких скрытых комиссий или дополнительных платежей. Работаем образованно.</p>
+    </div>
+
+    <div class="benefit-card">
+      <div class="icon-container orange">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+          <path d="M2 12h20"/>
+        </svg>
+      </div>
+      <h3 class="benefit-title">Глобальная экспертиза</h3>
+      <p class="benefit-description">Опыт поступления в лучшие европейские, американские и канадские университеты. Работаем международно.</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .why-nova-consulting {
+    margin: 160px auto 0 auto;
+    width: 1140px;
+    min-height: 645.5px;
+    padding: 16px;
+    box-sizing: border-box;
+  }
+
+  .main-title {
+    font-size: 30px;
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 10px 0;
+    text-align: center;
+  }
+
+  .decor-line {
+    width: 228px;
+    height: 2px;
+    border: none;
+    background-color: #F5810B;
+    margin: 0 auto;
+  }
+
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 30px;
+    height: calc(100% - 40px);
+    margin-top: 30px;
+  }
+
+  .benefit-card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  .icon-container {
+    width: 48px;
+    height: 48px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .icon-container.orange {
+    background-color: #ff6b35;
+    color: white;
+  }
+
+  .icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .benefit-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+    line-height: 1.2;
+    margin: 28px 0 14px 0;
+  }
+
+  .benefit-description {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+    line-height: 1.3;
+    text-align: left;
+  }
+
+  /* Адаптивные стили */
+  @media (max-width: 1200px) {
+    .why-nova-consulting {
+      width: 100%;
+      max-width: 1140px;
+      padding: 16px 20px;
+    }
+  }
+
+  @media (max-width: 992px) {
+    .why-nova-consulting {
+      margin: 120px auto 0 auto;
+      padding: 16px;
+    }
+
+    .benefits-grid {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      gap: 25px;
+    }
+
+    .main-title {
+      font-size: 28px;
+    }
+
+    .benefit-card {
+      padding: 25px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .why-nova-consulting {
+      margin: 80px auto 0 auto;
+      padding: 16px;
+    }
+
+    .benefits-grid {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(6, auto);
+      gap: 20px;
+      height: auto;
+    }
+
+    .main-title {
+      font-size: 26px;
+    }
+
+    .decor-line {
+      width: 180px;
+    }
+
+    .benefit-card {
+      padding: 20px;
+    }
+
+    .benefit-title {
+      font-size: 18px;
+      margin: 20px 0 12px 0;
+    }
+
+    .benefit-description {
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .why-nova-consulting {
+      margin: 60px auto 0 auto;
+      padding: 12px;
+    }
+
+    .main-title {
+      font-size: 24px;
+    }
+
+    .decor-line {
+      width: 150px;
+    }
+
+    .benefits-grid {
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .benefit-card {
+      padding: 16px;
+    }
+
+    .icon-container {
+      width: 44px;
+      height: 44px;
+    }
+
+    .icon {
+      width: 24px;
+      height: 24px;
+    }
+
+    .benefit-title {
+      font-size: 16px;
+      margin: 16px 0 10px 0;
+    }
+
+    .benefit-description {
+      font-size: 13px;
+      line-height: 1.4;
+    }
+  }
+</style>

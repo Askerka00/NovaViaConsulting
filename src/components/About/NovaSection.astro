@@ -1,0 +1,307 @@
+---
+// K&M Study Solutions Section Component
+---
+<section data-aos="fade-up" class="km-section">
+  <div class="content">
+    <h2 class="title">Мы — Nova Via Consulting</h2>
+    <hr class='decor-line'>
+    <p class="description">
+      Помогаем студентам поступать в университеты Малайзии, Австралии и других стран.<br><br>
+      С 2018 года мы уже отправили более 300 студентов на обучение за рубеж.<br><br>
+      Подбираем подходящие программы, оформляем документы и сопровождаем на каждом этапе — от первой консультации до начала учёбы.
+    </p>
+  </div>
+  
+  <div class="stats-container">
+    <div class="stat-item">
+      <div class="stat-number" data-target="300">0</div>
+      <div class="stat-label">СТУДЕНТОВ</div>
+    </div>
+    
+    <div class="stat-item">
+      <div class="stat-number" data-target="50">0</div>
+      <div class="stat-label">ПРОГРАММ</div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .km-section {
+    box-sizing: content-box;
+    display: flex;
+    gap: 70px;
+    align-items: flex-start;
+    padding: 0 40px;
+    max-width: 1130px;
+    margin: 120px auto 0 auto;
+  }
+</style>
+
+<script>
+  // Функция для анимации чисел
+  function animateNumbers() {
+    const statNumbers = document.querySelectorAll('.stat-number');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const target = parseInt(entry.target.getAttribute('data-target'));
+          const isStudents = entry.target.nextElementSibling.textContent === 'СТУДЕНТОВ';
+          animateValue(entry.target, 0, target, 1500, isStudents);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    statNumbers.forEach(num => observer.observe(num));
+  }
+
+  function animateValue(element, start, end, duration, addPlus) {
+    let startTimestamp = null;
+    const step = (timestamp) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      const current = Math.floor(progress * (end - start) + start);
+      element.textContent = current + (addPlus ? '+' : '+');
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      }
+    };
+    window.requestAnimationFrame(step);
+  }
+
+  // Запускаем анимацию когда DOM загружен
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', animateNumbers);
+  } else {
+    animateNumbers();
+  }
+</script>
+<style>
+  .content {
+    flex: 1;
+    max-width: 540px;
+    padding-top: 20px;
+  }
+  
+  .content hr {
+    width: 111px;
+    height: 2px;
+    border: none;
+    background-color: #F5810B;
+    margin: 0;
+  }
+  
+  .title {
+    font-size: 32px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+    line-height: 1.2;
+  }
+  
+  .description {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #555;
+    margin-top: 30px;
+  }
+  
+  .stats-container {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    padding-top: 20px;
+  }
+  
+  .stat-item {
+    text-align: right;
+  }
+  
+  .stat-number {
+    font-size: 80px;
+    font-weight: 700;
+    color: #F5810B;
+    line-height: 1;
+    margin-bottom: 5px;
+  }
+  
+  .stat-label {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    letter-spacing: 2px;
+  }
+
+  /* Адаптив для экранов до 1440px */
+  @media (max-width: 1440px) {
+    .km-section {
+      margin: 160px 130px 0 130px;
+      max-width: none;
+      padding: 0;
+    }
+  }
+
+  /* Адаптив для экранов до 1200px */
+  @media (max-width: 1200px) {
+    .km-section {
+      margin: 140px 100px 0 100px;
+      gap: 30px;
+    }
+    
+    .title {
+      font-size: 28px;
+    }
+    
+    .stat-number {
+      font-size: 70px;
+    }
+    
+    .stat-label {
+      font-size: 16px;
+    }
+  }
+
+  /* Адаптив для экранов до 1100px */
+  @media (max-width: 1100px) {
+    .km-section {
+      margin: 120px 40px 0 40px;
+      gap: 25px;
+    }
+    
+    .title {
+      font-size: 24px;
+    }
+    
+    .description {
+      margin-top: 25px;
+    }
+    
+    .stat-number {
+      font-size: 60px;
+    }
+    
+    .stats-container {
+      gap: 50px;
+    }
+  }
+
+  /* Адаптив для экранов до 768px */
+  @media (max-width: 768px) {
+    .km-section {
+      flex-direction: column;
+      margin: 100px 20px 0 20px;
+      gap: 40px;
+      align-items: center;
+      text-align: center;
+    }
+    
+    .content {
+      width: 100%;
+      max-width: none;
+      padding-top: 0;
+    }
+    
+    .content hr {
+      margin: 0 auto;
+    }
+    
+    .stats-container {
+      flex-direction: row;
+      gap: 60px;
+      padding-top: 0;
+    }
+    
+    .stat-item {
+      text-align: center;
+    }
+    
+    .stat-number {
+      font-size: 50px;
+    }
+  }
+
+  /* Адаптив для экранов до 600px */
+  @media (max-width: 600px) {
+    .km-section {
+      margin: 80px 15px 0 15px;
+      gap: 30px;
+    }
+    
+    .description {
+      line-height: 1.6;
+      margin-top: 20px;
+    }
+    
+    .content hr {
+      width: 80px;
+    }
+    
+    .stats-container {
+      gap: 40px;
+    }
+    
+    .stat-number {
+      font-size: 45px;
+    }
+    
+    .stat-label {
+      font-size: 14px;
+    }
+  }
+
+  /* Адаптив для экранов до 480px */
+  @media (max-width: 480px) {
+    .km-section {
+      margin: 60px 10px 0 10px;
+      gap: 25px;
+    }
+    
+    .title {
+      margin-bottom: 8px;
+    }
+    
+    .description {
+      margin-top: 15px;
+    }
+    
+    .content hr {
+      width: 60px;
+      height: 1.5px;
+    }
+    
+    .stats-container {
+      gap: 30px;
+    }
+    
+    .stat-number {
+      font-size: 40px;
+    }
+    
+    .stat-label {
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+  }
+
+  /* Адаптив для очень маленьких экранов */
+  @media (max-width: 360px) {
+    .km-section {
+      margin: 50px 5px 0 5px;
+    }
+    
+    .description {
+      font-size: 12px;
+      line-height: 1.5;
+    }
+    
+    .stat-number {
+      font-size: 35px;
+    }
+    
+    .stat-label {
+      font-size: 11px;
+    }
+  }
+</style>

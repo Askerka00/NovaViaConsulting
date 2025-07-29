@@ -1,0 +1,326 @@
+---
+// InspiringCampuses.astro
+---
+<section data-aos="fade-up" class="inspiring-campuses">
+  <h2 class="title">Вдохновляющие Кампусы</h2>
+  <hr class='decor-line'>
+  <div class="campus-grid">
+    <div class="campus-item">
+      <div class="campus-image">
+        <img src="/src/assets/images/campus_1.webp" alt="University Campus" />
+      </div>
+      <div class="campus-info">
+        <h3>Petaling Jaya</h3>
+        <p>Кампус</p>
+      </div>
+    </div>
+    <div class="campus-item">
+      <div class="campus-image">
+        <img src="/src/assets/images/campus_2.jpg" alt="University Campus" />
+      </div>
+      <div class="campus-info">
+        <h3>Cyberjaya</h3>
+        <p>Кампус</p>
+      </div>
+    </div>
+    <div class="campus-item">
+      <div class="campus-image">
+        <img src="/src/assets/images/campus_3.jpg" alt="University Campus" />
+      </div>
+      <div class="campus-info">
+        <h3>Kota Kinabalu</h3>
+        <p>Кампус</p>
+      </div>
+    </div>
+    <div class="campus-item">
+      <div class="campus-image">
+        <img src="/src/assets/images/campus_4.jpg" alt="University Campus" />
+      </div>
+      <div class="campus-info">
+        <h3>University of Žilina</h3>
+        <p>Университет</p>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+  .inspiring-campuses {
+    max-width: 900px;
+    margin: 160px auto 0 auto;
+    padding: 40px 20px;
+    position: relative;
+    border-radius: 8px;
+    background: #FFFFFF;
+  }
+  .title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    color: #333333;
+    margin: 10px auto;
+    position: relative;
+  }
+  .decor-line {
+    width: 228px;
+    height: 2px;
+    border: none;
+    background-color: #F5810B;
+    margin: 0 auto;
+  }
+  .campus-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 30px;
+    position: relative;
+  }
+  .campus-item {
+    position: relative;
+    z-index: 2;
+  }
+  .campus-image {
+    width: 435px;
+    height: 244.56px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  .campus-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .campus-info h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333333;
+    margin: 0 0 4px 0;
+  }
+  .campus-info p {
+    font-size: 16px;
+    color: #666666;
+    margin: 0;
+  }
+
+  /* Адаптивные стили */
+  @media (max-width: 1200px) {
+    .inspiring-campuses {
+      max-width: 800px;
+      margin: 140px auto 0 auto;
+      padding: 36px 18px;
+    }
+    
+    .campus-image {
+      width: 380px;
+      height: 213px;
+    }
+    
+    .title {
+      font-size: 28px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .inspiring-campuses {
+      max-width: 720px;
+      padding: 32px 16px;
+    }
+    
+    .campus-grid {
+      gap: 25px;
+    }
+    
+    .campus-image {
+      width: 340px;
+      height: 191px;
+    }
+    
+    .campus-info h3 {
+      font-size: 19px;
+    }
+    
+    .campus-info p {
+      font-size: 15px;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .inspiring-campuses {
+      max-width: 100%;
+      margin: 100px 16px 0 16px;
+    }
+    
+    .campus-image {
+      width: 100%;
+      height: 200px;
+    }
+    
+    .decor-line {
+      width: 200px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .inspiring-campuses {
+      padding: 30px 15px;
+      margin: 80px 12px 0 12px;
+    }
+    
+    .campus-grid {
+      grid-template-columns: 1fr;
+      gap: 25px;
+    }
+    
+    .title {
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+    
+    .decor-line {
+      width: 180px;
+    }
+    
+    .campus-image {
+      height: 220px;
+      margin-bottom: 14px;
+    }
+    
+    .campus-info h3 {
+      font-size: 18px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .inspiring-campuses {
+      padding: 28px 12px;
+      margin: 70px 10px 0 10px;
+    }
+    
+    .title {
+      font-size: 24px;
+    }
+    
+    .decor-line {
+      width: 160px;
+    }
+    
+    .campus-grid {
+      gap: 22px;
+      margin-top: 25px;
+    }
+    
+    .campus-image {
+      height: 200px;
+      border-radius: 10px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .inspiring-campuses {
+      padding: 24px 10px;
+      margin: 60px 8px 0 8px;
+      border-radius: 6px;
+    }
+    
+    .title {
+      font-size: 22px;
+      margin: 8px auto;
+    }
+    
+    .decor-line {
+      width: 140px;
+      height: 1.5px;
+    }
+    
+    .campus-grid {
+      gap: 20px;
+      margin-top: 22px;
+    }
+    
+    .campus-image {
+      height: 180px;
+      margin-bottom: 12px;
+      border-radius: 8px;
+    }
+    
+    .campus-info h3 {
+      font-size: 17px;
+      margin: 0 0 3px 0;
+    }
+    
+    .campus-info p {
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 380px) {
+    .inspiring-campuses {
+      padding: 20px 8px;
+      margin: 50px 6px 0 6px;
+    }
+    
+    .title {
+      font-size: 20px;
+    }
+    
+    .decor-line {
+      width: 120px;
+    }
+    
+    .campus-grid {
+      gap: 18px;
+      margin-top: 20px;
+    }
+    
+    .campus-image {
+      height: 160px;
+      margin-bottom: 10px;
+    }
+    
+    .campus-info h3 {
+      font-size: 16px;
+    }
+    
+    .campus-info p {
+      font-size: 13px;
+    }
+  }
+
+  @media (max-width: 320px) {
+    .inspiring-campuses {
+      padding: 18px 6px;
+      margin: 45px 4px 0 4px;
+    }
+    
+    .title {
+      font-size: 18px;
+      margin: 6px auto;
+    }
+    
+    .decor-line {
+      width: 100px;
+    }
+    
+    .campus-grid {
+      gap: 16px;
+      margin-top: 18px;
+    }
+    
+    .campus-image {
+      height: 140px;
+      margin-bottom: 8px;
+      border-radius: 6px;
+    }
+    
+    .campus-info h3 {
+      font-size: 15px;
+      margin: 0 0 2px 0;
+    }
+    
+    .campus-info p {
+      font-size: 12px;
+    }
+  }
+</style>

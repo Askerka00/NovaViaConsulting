@@ -1,0 +1,228 @@
+
+    <section data-aos="fade-right" class="nova-section">
+      <div class="image-container">
+        <img src="/src/assets/images/university_photo.jpg" alt="Зарубежный университет" />
+      </div>
+     
+      <div class="content">
+        <h2 class="title">Nova Via Consulting</h2>
+        <hr class='decor-line'>
+        <p class="description">
+          Nova Via Consulting — эксперт в сфере международного образования.<br><br>
+          Мы помогаем студентам поступать в престижные зарубежные университеты, получать образование, признанное во всём мире.<br><br>
+          Работаем с 2018 года. Более 300 студентов уже обучаются за рубежом благодаря нам.
+        </p>
+      </div>
+    </section>
+
+    <style>
+      .nova-section {
+        box-sizing: content-box;
+        display: flex;
+        gap: 40px;
+        align-items: flex-start;
+        padding: 0 40px;
+        max-width: 1130px;
+        margin: 160px auto 0 auto;
+      }
+      
+      .image-container {
+        flex-shrink: 0;
+        width: 555px;
+        height: 370px;
+        border-radius: 0;
+        overflow: hidden;
+        box-shadow: none;
+        border-radius: 4px;
+      }
+      
+      .image-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      
+      .content {
+        width: 540px;
+        flex: 1;
+        padding-left: 0;
+        padding-top: 20px;
+      }
+      
+      .content hr {
+        width: 111px;
+        height: 2px;
+        border: none;
+        background-color: #F5810B;
+        margin: 0;
+      }
+      
+      .title {
+        font-size: 32px;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 10px;
+        line-height: 1.2;
+      }
+      
+      .description {
+        font-size: 16px;
+        line-height: 1.7;
+        color: #555;
+        margin-top: 30px;
+      }
+
+      /* Адаптив для экранов до 1440px */
+      @media (max-width: 1440px) {
+        .nova-section {
+          margin: 160px 130px 0 130px;
+          max-width: none;
+          padding: 0;
+        }
+      }
+
+      /* Адаптив для экранов до 1200px */
+      @media (max-width: 1200px) {
+        .nova-section {
+          margin: 140px 100px 0 100px;
+          gap: 30px;
+        }
+        
+        .image-container {
+          width: 480px;
+          height: 320px;
+        }
+        
+        .content {
+          width: auto;
+        }
+        
+        .title {
+          font-size: 28px;
+        }
+      }
+
+      /* Адаптив для экранов до 900px */
+      @media (max-width: 1100px) {
+        .nova-section {
+          margin: 120px 40px 0 40px;
+          gap: 25px;
+        }
+        
+        .image-container {
+          width: 420px;
+          height: 280px;
+        }
+        
+        .title {
+          font-size: 26px;
+        }
+        
+        .description {
+          font-size: 15px;
+          margin-top: 25px;
+        }
+      }
+
+      /* Адаптив для экранов до 768px */
+      @media (max-width: 768px) {
+        .nova-section {
+          flex-direction: column;
+          margin: 100px 20px 0 20px;
+          gap: 30px;
+          align-items: flex-start;
+          text-align: left;
+        }
+        
+        .image-container {
+          width: 100%;
+          max-width: 400px;
+          height: 260px;
+        }
+        
+        .content {
+          width: 100%;
+          padding-left: 0;
+          padding-top: 0;
+        }
+        
+        .title {
+          font-size: 24px;
+        }
+        
+        .content hr {
+          margin: 0;
+        }
+      }
+
+      /* Адаптив для экранов до 600px */
+      @media (max-width: 600px) {
+        .nova-section {
+          margin: 80px 15px 0 15px;
+          gap: 25px;
+        }
+        
+        .image-container {
+          max-width: 350px;
+          height: 230px;
+        }
+        
+        .description {
+          font-size: 14px;
+          line-height: 1.6;
+          margin-top: 20px;
+        }
+        
+        .content hr {
+          width: 80px;
+        }
+      }
+
+      /* Адаптив для экранов до 480px */
+      @media (max-width: 480px) {
+        .nova-section {
+          margin: 60px 20px 0 20px;
+          gap: 20px;
+        }
+        
+        .image-container {
+          max-width: 300px;
+          height: 200px;
+        }
+        
+        .title {
+          margin-bottom: 8px;
+        }
+        
+        .description {
+          font-size: 13px;
+          margin-top: 15px;
+        }
+        
+        .content hr {
+          width: 60px;
+          height: 1.5px;
+        }
+      }
+
+      /* Адаптив для очень маленьких экранов */
+      @media (max-width: 360px) {
+        .nova-section {
+          margin: 50px 0 0 5px;
+        }
+        
+        .image-container {
+          max-width: 280px;
+          height: 180px;
+        }
+        
+        .title {
+          font-size: 18px;
+        }
+        
+        .description {
+          font-size: 12px;
+          line-height: 1.5;
+        }
+      }
+    </style>

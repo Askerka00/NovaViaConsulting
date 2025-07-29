@@ -1,0 +1,177 @@
+---
+// Footer.astro
+---
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-grid">
+      <!-- О нас -->
+      <div class="footer-section">
+        <h3 class="footer-title">О нас</h3>
+        <div class="footer-logo"><img src='/public/favicon.svg' /></div>
+        <p class="footer-text">
+          Мы с удовольствием поможем вам подобрать подходящий университет и программу, поэтому смело обращайтесь к нам!
+        </p>
+      </div>
+
+      <!-- Наш адрес -->
+      <div class="footer-section">
+        <h3 class="footer-title">Наш адрес</h3>
+        <div class="footer-address">
+          <div class="address-item">
+            <svg class="icon" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+            </svg>
+            <span>Ваш Адрес</span>
+          </div>
+          <div class="address-item">
+            <svg class="icon" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path>
+            </svg>
+            <span>Пн - Сб с 9:00 до 18:00</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Популярные направления -->
+      <div class="footer-section">
+        <h3 class="footer-title">Популярные направления</h3>
+        <ul class="footer-links">
+          <li><a href="#" class="footer-link">Бизнес и Менеджмент</a></li>
+          <li><a href="#" class="footer-link">IT и Инженерия</a></li>
+          <li><a href="#" class="footer-link">Экономика и Управление</a></li>
+          <li><a href="#" class="footer-link">Архитектура</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div class="footer-copyright">
+    <div class="copyright-container">
+      <div class="copyright-text">Copyright Nova Consulting © 2025</div>
+      <div class="copyright-text">Steplink Solutions</div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: linear-gradient(to right, #fb923c, #f97316);
+    color: white;
+    margin-top: 160px;
+  }
+
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 48px 24px;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  @media (min-width: 768px) {
+    .footer-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .footer-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .footer-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 16px;
+    margin-top: 0;
+  }
+
+  .footer-logo {
+    font-size: 2.25rem;
+    font-weight: 300;
+    margin-bottom: 24px;
+  }
+
+  .footer-text {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .footer-address {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .address-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .icon {
+    width: 20px;
+    height: 20px;
+    margin-top: 4px;
+    flex-shrink: 0;
+  }
+
+  .address-item span {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .footer-link {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .footer-link:hover {
+    color: white;
+  }
+
+  .footer-copyright {
+    background-color: #374151;
+    color: #d1d5db;
+    padding: 16px 0;
+  }
+
+  .copyright-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  @media (min-width: 768px) {
+    .copyright-container {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 0;
+    }
+  }
+
+  .copyright-text {
+    font-size: 0.875rem;
+  }
+</style>
