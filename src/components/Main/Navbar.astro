@@ -10,13 +10,13 @@ function isActive(href: string): boolean {
 }
 
 import { Image } from 'astro:assets';
-import logo from '../../../public/favicon.svg';
+import logo from '../../assets/icons/favicon.png';
 
 ---
 
 <nav class="navbar" id="navbar">
   <div class="container">
-    <div class="logo"><img src='/favicon.svg'></div>
+    <div class="logo"><Image alt='NovaViaConsulting' src={logo} /></div>
    
     <ul class="nav-menu" id="nav-menu">
       <li><a href="/" class={`nav-link ${isActive('/') ? 'active' : ''}`}>Главная</a></li>
@@ -86,7 +86,8 @@ import logo from '../../../public/favicon.svg';
   }
 
   .logo img {
-    width: 64px;
+    height: 64px;
+    width: 87px;
     font-weight: bold;
     color: #ff8c42;
     transition: all 0.3s ease;

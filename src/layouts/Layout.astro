@@ -4,18 +4,19 @@ import 'aos/dist/aos.css';
 import Navbar from '../components/Main/Navbar.astro';
 import Footer from '../components/Main/footer.astro';
 import SubmitApplication from '../components/Main/SubmitApplication.astro';
+import logo from '../assets/images/logo.png'
 ---
 <!doctype html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/src/assets/images/logo.png" />
+    <link rel="icon" type="image/svg+xml" href={logo.src}/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <meta name="generator" content={Astro.generator} />
-    <title>Astro Basics</title>
+    <title>Nova Via Consulting</title>
   </head>
   <Navbar />
   <body>
