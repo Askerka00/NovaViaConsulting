@@ -8,11 +8,15 @@ function isActive(href: string): boolean {
   if (href !== '/' && currentPath.startsWith(href)) return true;
   return false;
 }
+
+import { Image } from 'astro:assets';
+import logo from '../../../public/favicon.svg';
+
 ---
 
 <nav class="navbar" id="navbar">
   <div class="container">
-    <div class="logo"><img src='/public/favicon.svg'></div>
+    <div class="logo"><img src='/favicon.svg'></div>
    
     <ul class="nav-menu" id="nav-menu">
       <li><a href="/" class={`nav-link ${isActive('/') ? 'active' : ''}`}>Главная</a></li>

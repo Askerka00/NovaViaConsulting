@@ -1,7 +1,11 @@
-
+---
+import { Image } from 'astro:assets';
+import University from '../../assets/images/university_photo.jpg';
+---
+    
     <section data-aos="fade-right" class="nova-section">
       <div class="image-container">
-        <img src="/src/assets/images/university_photo.jpg" alt="Зарубежный университет" />
+        <Image src={University} alt="Зарубежный университет" />
       </div>
      
       <div class="content">

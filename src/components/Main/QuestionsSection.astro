@@ -1,5 +1,6 @@
 ---
-// QuestionsSection.astro
+import { Image } from 'astro:assets';
+import University from '../../assets/images/ModernUniversity.png';
 ---
 <section data-aos="fade-up" class="questions-section">
  <div class='questions-section-wrapper'>
@@ -10,12 +11,13 @@
       ответы на все ваши вопросы от экспертов.
     </p>
     <button data-scroll-to="form" class="consultation-button">
-      Получить консультацию <img src='/src/assets/icons/ArrowRigth.svg'>
+      Получить консультацию 
+
     </button>
   </div>
  
   <div class="image-container">
-    <img src="/src/assets/images/ModernUniversity.png" alt="Modern building architecture" class="building-image" />
+    <Image src={University} alt="Modern building architecture" class="building-image" />
   </div>
  </div>
 </section>

@@ -1,5 +1,10 @@
 ---
-// InspiringCampuses.astro
+import { Image } from 'astro:assets';
+import University1 from '../../assets/images/campus_1.webp';
+import University2 from '../../assets/images/campus_2.jpg';
+import University3 from '../../assets/images/campus_3.jpg';
+import University4 from '../../assets/images/campus_4.jpg';
+
 ---
 <section data-aos="fade-up" class="inspiring-campuses">
   <h2 class="title">Вдохновляющие Кампусы</h2>
@@ -7,7 +12,7 @@
   <div class="campus-grid">
     <div class="campus-item">
       <div class="campus-image">
-        <img src="/src/assets/images/campus_1.webp" alt="University Campus" />
+        <Image src={University1} alt="University Campus" />
       </div>
       <div class="campus-info">
         <h3>Petaling Jaya</h3>
@@ -16,7 +21,7 @@
     </div>
     <div class="campus-item">
       <div class="campus-image">
-        <img src="/src/assets/images/campus_2.jpg" alt="University Campus" />
+        <Image src={University2} alt="University Campus" />
       </div>
       <div class="campus-info">
         <h3>Cyberjaya</h3>
@@ -25,7 +30,7 @@
     </div>
     <div class="campus-item">
       <div class="campus-image">
-        <img src="/src/assets/images/campus_3.jpg" alt="University Campus" />
+        <Image src={University3} alt="University Campus" />
       </div>
       <div class="campus-info">
         <h3>Kota Kinabalu</h3>
@@ -34,7 +39,7 @@
     </div>
     <div class="campus-item">
       <div class="campus-image">
-        <img src="/src/assets/images/campus_4.jpg" alt="University Campus" />
+        <Image src={University4} alt="University Campus" />
       </div>
       <div class="campus-info">
         <h3>University of Žilina</h3>

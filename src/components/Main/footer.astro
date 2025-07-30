@@ -1,19 +1,20 @@
 ---
-// Footer.astro
+import { Image } from 'astro:assets';
+import Logo from '../../../public/favicon.svg?raw';
 ---
-
 <footer class="footer">
   <div class="footer-container">
     <div class="footer-grid">
       <!-- О нас -->
       <div class="footer-section">
         <h3 class="footer-title">О нас</h3>
-        <div class="footer-logo"><img src='/public/favicon.svg' /></div>
+        <div class="footer-logo">
+          <Fragment set:html={Logo} />
+        </div>
         <p class="footer-text">
           Мы с удовольствием поможем вам подобрать подходящий университет и программу, поэтому смело обращайтесь к нам!
         </p>
       </div>
-
       <!-- Наш адрес -->
       <div class="footer-section">
         <h3 class="footer-title">Наш адрес</h3>
@@ -32,7 +33,6 @@
           </div>
         </div>
       </div>
-
       <!-- Популярные направления -->
       <div class="footer-section">
         <h3 class="footer-title">Популярные направления</h3>
@@ -45,7 +45,6 @@
       </div>
     </div>
   </div>
-
   <!-- Copyright -->
   <div class="footer-copyright">
     <div class="copyright-container">
@@ -61,73 +60,79 @@
     color: white;
     margin-top: 160px;
   }
-
+  
   .footer-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 48px 24px;
   }
-
+  
   .footer-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 32px;
   }
-
+  
   @media (min-width: 768px) {
     .footer-grid {
       grid-template-columns: repeat(3, 1fr);
     }
   }
-
+  
   .footer-section {
     display: flex;
     flex-direction: column;
     gap: 16px;
   }
-
+  
   .footer-title {
     font-size: 1.25rem;
     font-weight: bold;
     margin-bottom: 16px;
     margin-top: 0;
   }
-
+  
   .footer-logo {
     font-size: 2.25rem;
     font-weight: 300;
     margin-bottom: 24px;
   }
-
+  
+  .footer-logo svg {
+    width: 48px;
+    height: 48px;
+    fill: currentColor;
+  }
+  
   .footer-text {
     color: rgba(255, 255, 255, 0.9);
     line-height: 1.6;
     margin: 0;
   }
-
+  
   .footer-address {
     display: flex;
     flex-direction: column;
     gap: 12px;
   }
-
+  
   .address-item {
     display: flex;
     align-items: flex-start;
     gap: 8px;
   }
-
+  
   .icon {
     width: 20px;
     height: 20px;
     margin-top: 4px;
     flex-shrink: 0;
   }
-
+  
   .address-item span {
     color: rgba(255, 255, 255, 0.9);
   }
-
+  
   .footer-links {
     list-style: none;
     padding: 0;
@@ -136,23 +141,23 @@
     flex-direction: column;
     gap: 8px;
   }
-
+  
   .footer-link {
     color: rgba(255, 255, 255, 0.9);
     text-decoration: none;
     transition: color 0.3s ease;
   }
-
+  
   .footer-link:hover {
     color: white;
   }
-
+  
   .footer-copyright {
     background-color: #374151;
     color: #d1d5db;
     padding: 16px 0;
   }
-
+  
   .copyright-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -162,7 +167,7 @@
     align-items: center;
     gap: 8px;
   }
-
+  
   @media (min-width: 768px) {
     .copyright-container {
       flex-direction: row;
@@ -170,7 +175,7 @@
       gap: 0;
     }
   }
-
+  
   .copyright-text {
     font-size: 0.875rem;
   }
