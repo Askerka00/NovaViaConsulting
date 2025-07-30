@@ -1,17 +1,25 @@
 ---
-// Navbar.astro
 const currentPath = Astro.url.pathname;
 
-// Функция для проверки активности ссылки
+// Функция для проверки активности ссылки с учетом базового пути
 function isActive(href: string): boolean {
-  if (href === '/' && currentPath === '/') return true;
-  if (href !== '/' && currentPath.startsWith(href)) return true;
+  // Определяем базовый путь на основе текущего URL
+  const basePath = '/NovaViaConsulting';
+  
+  // Нормализуем текущий путь (убираем базовый путь если он есть)
+  let normalizedCurrentPath = currentPath;
+  if (currentPath.startsWith(basePath)) {
+    normalizedCurrentPath = currentPath.slice(basePath.length) || '/';
+  }
+  
+  // Проверяем активность
+  if (href === '/' && normalizedCurrentPath === '/') return true;
+  if (href !== '/' && normalizedCurrentPath.startsWith(href)) return true;
   return false;
 }
 
 import { Image } from 'astro:assets';
 import logo from '../../assets/icons/favicon.png';
-
 ---
 
 <nav class="navbar" id="navbar">
