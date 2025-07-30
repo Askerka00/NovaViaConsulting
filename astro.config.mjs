@@ -1,8 +1,10 @@
-// @ts-check
 import { defineConfig } from 'astro/config';
 
-// https://astro.build/config
 export default defineConfig({
-    site: 'https://Askerka00.github.io',
-    base: 'NovaViaConsulting',
+  site: 'https://yourusername.github.io',
+  base: '/', // убрать если репозиторий называется yourusername.github.io
+  output: 'static',
+  build: {
+    assets: 'assets'
+  }
 });
