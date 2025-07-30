@@ -1,10 +1,15 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://yourusername.github.io',
-  base: '/', // убрать если репозиторий называется yourusername.github.io
+  site: 'https://askerka00.github.io',
+  base: '/NovaViaConsulting', // название вашего репозитория
   output: 'static',
   build: {
-    assets: 'assets'
+    assets: '_astro' // явно указываем папку для ресурсов
+  },
+  vite: {
+    build: {
+      assetsInlineLimit: 0 // отключаем инлайн ресурсов
+    }
   }
 });
